@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innoway Systems</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #videoContainer {
+            position: relative;
+            width: 640px;
+            height: 480px;
+            background-color: #2ecc71;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #buttonContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 150px;
+        }
+        #start {
+            background-color: green;
+            color: white;
+        }
+        #pause {
+            background-color: yellow;
+            color: black;
+        }
+        #acknowledge {
+            background-color: blue;
+            color: white;
+        }
+        #stop {
+            background-color: red;
+            color: white;
+        }
+        #fps {
+            padding: 20px;
+            font-size: 15px;
+            border: none;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="videoContainer">
+            <video></video>
+            <canvas></canvas>
+            <div id="placeholder"> LIVE FEED </div>
+        </div>
+        <div id="buttonContainer">
+            <button id="start">START</button>
+            <button id="pause">PAUSE</button>
+            <button id="acknowledge">ACKNOWLEDGE</button>
+            <button id="stop">STOP</button>
+        </div>
+    </div>
+    <div id="fps">FPS</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://underscorejs.org/underscore-min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
+        integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/3.2.0/async.min.js"
+        integrity="sha512-6K6+H87tLdCWvY5ml9ZQXLRlPlDEt8uXmtELhuJRgFyEDv6JvndWHg3jadJuBVGPEhhA2AAt+ROMC2V7EvTIWw=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
+
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js"></script>
+
+</body>
+</html>
